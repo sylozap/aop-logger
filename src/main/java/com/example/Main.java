@@ -1,27 +1,22 @@
-import com.example.Cabinet;
-import com.example.ClassRoom;
-import com.example.Gym;
-import com.example.Room;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static List<Room> rooms = new ArrayList<>(); // Коллекция для хранения помещений
+    private static List<Room> rooms = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         boolean running = true;
         while (running) {
-            // Выводим меню
             System.out.println("\nМеню:");
             System.out.println("1. Добавить новый элемент");
             System.out.println("2. Удалить элемент по индексу");
             System.out.println("3. Вывести все элементы");
             System.out.println("4. Сравнить два элемента");
             System.out.println("5. Завершить работу");
-            System.out.print("Выберите пункт: ");
 
             int choice = getIntInput("Выберите пункт: ", 1, 5); // Безопасный ввод числа
 
@@ -47,7 +42,6 @@ public class Main {
         scanner.close();
     }
 
-    // Метод для безопасного ввода целого числа в заданном диапазоне
     private static int getIntInput(String prompt, int min, int max) {
         while (true) {
             System.out.print(prompt);
@@ -65,16 +59,14 @@ public class Main {
         }
     }
 
-    // Добавление нового элемента
     private static void addElement() {
-        System.out.println("Выберите тип помещения:");
+        System.out.println("\nВыберите тип помещения:");
         System.out.println("1. Обычное помещение (com.example.Room)");
         System.out.println("2. Учебная аудитория (com.example.ClassRoom)");
         System.out.println("3. Спортзал (com.example.Gym)");
         System.out.println("4. Кабинет (com.example.Cabinet)");
         int type = getIntInput("Тип: ", 1, 4);
 
-        // Общие поля для всех классов
         int area = getIntInput("Введите площадь (положительное число): ", 1, Integer.MAX_VALUE);
         System.out.print("Введите название: ");
         String name = scanner.nextLine().trim();
@@ -110,18 +102,16 @@ public class Main {
         System.out.println("Элемент добавлен: " + room);
     }
 
-    // Удаление элемента по индексу
     private static void removeElement() {
         if (rooms.isEmpty()) {
             System.out.println("Коллекция пуста.");
             return;
         }
-        int index = getIntInput("Введите индекс для удаления (0 до " + (rooms.size() - 1) + "): ", 0, rooms.size() - 1);
+        int index = getIntInput("\nВведите индекс для удаления (0 до " + (rooms.size() - 1) + "): ", 0, rooms.size() - 1);
         Room removed = rooms.remove(index);
         System.out.println("Элемент удалён: " + removed);
     }
 
-    // Вывод всех элементов
     private static void printAllElements() {
         if (rooms.isEmpty()) {
             System.out.println("Коллекция пуста.");
@@ -133,7 +123,6 @@ public class Main {
         }
     }
 
-    // Сравнение двух элементов
     private static void compareElements() {
         if (rooms.size() < 2) {
             System.out.println("Недостаточно элементов для сравнения (нужно минимум 2).");
