@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.Objects;
 
 public class Cabinet extends Room {

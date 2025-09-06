@@ -1,5 +1,6 @@
+package com.example;
+
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Room {
     protected int area;
@@ -54,22 +55,4 @@ public class Room {
                 ", название='" + name + '\'' +
                 '}';
     }
-
-//    public static int getIntInput(Scanner scanner, String prompt, int min, int max) {
-//        int value;
-//        while (true) {
-//            System.out.print(prompt);
-//            String input = scanner.nextLine();
-//            try {
-//                value = Integer.parseInt(input);
-//                if (value >= min && value <= max) {
-//                    return value;
-//                } else {
-//                    System.out.println("Ошибка: Значение должно быть в диапазоне от " + min + " до " + max + ".");
-//                }
-//            } catch (NumberFormatException e) {
-//                System.out.println("Ошибка: Введите целое число.");
-//            }
-//        }
-//    }
 }
