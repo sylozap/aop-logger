@@ -1,10 +1,8 @@
-//package com.example.aop_logger;
-
 import java.util.Objects;
 
 public class Gym extends Room {
-    private int equipmentCount; // Количество спортивного оборудования
-    private String sportType; // Вид спорта
+    private int equipmentCount;
+    private String sportType;
 
     public Gym() {
         super();
@@ -42,8 +40,8 @@ public class Gym extends Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Gym sportZal = (Gym) o;
-        return equipmentCount == sportZal.equipmentCount && Objects.equals(sportType, sportZal.sportType);
+        Gym that = (Gym) o;
+        return equipmentCount == that.equipmentCount && Objects.equals(sportType, that.sportType);
     }
 
     @Override

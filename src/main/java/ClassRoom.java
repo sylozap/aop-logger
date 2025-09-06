@@ -1,10 +1,8 @@
-//package com.example.aop_logger;
-
 import java.util.Objects;
 
 public class ClassRoom extends Room {
-    private int capacity; // Вместимость
-    private String subject; // Предмет
+    private int capacity;
+    private String subject;
 
     public ClassRoom() {
         super();

@@ -1,10 +1,8 @@
-//package com.example.aop_logger;
-
 import java.util.Objects;
 
 public class Cabinet extends Room {
-    private int numberOfWorkplaces; // Количество рабочих мест
-    private String department; // Отдел
+    private int numberOfWorkplaces;
+    private String department;
 
     public Cabinet() {
         super();
@@ -42,8 +40,8 @@ public class Cabinet extends Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Cabinet cabinet = (Cabinet) o;
-        return numberOfWorkplaces == cabinet.numberOfWorkplaces && Objects.equals(department, cabinet.department);
+        Cabinet that = (Cabinet) o;
+        return numberOfWorkplaces == that.numberOfWorkplaces && Objects.equals(department, that.department);
     }
 
     @Override
